@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/Users/Enigmoid/Code/evandorsky"
+			"path": "/Users/Enigmoid/Code/evandorsky",
+			"file_exclude_patterns": [".*"]
 		}
 	]
 }
