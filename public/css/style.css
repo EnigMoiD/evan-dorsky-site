@@ -7,12 +7,12 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
 @font-face {
   font-family: 'Audimat';
-  src: url("/static/fonts/AUdimat-Regular.otf");
+  src: url("/public/fonts/AUdimat-Regular.otf");
 }
 @font-face {
   font-family: 'Audimat';
   font-weight: bold;
-  src: url("/static/fonts/AUdimat-Regular.otf");
+  src: url("/public/fonts/AUdimat-Regular.otf");
 }
 /*
  * Nib provides a CSS reset
@@ -112,10 +112,13 @@ a img {
  * Store the main color and
  * background color as variables
  */
+a {
+  text-decoration: none;
+}
 body {
   font-family: 'Open Sans';
   background-color: #faf9f0;
-  color: #444;
+  color: #1b1b1b;
 }
 header {
   font-family: 'Audimat';
@@ -127,59 +130,57 @@ header {
    * Note the use of the `main-color`
    * variable and the `darken` function
    */
-  background-color: #fa5b4d;
-  border-bottom: 1px solid #df1806;
-  text-shadow: 0px -1px 0px #df1806;
+  background-color: #3178ff;
+  border-bottom: 1px solid #0049d5;
+  text-shadow: 0px -1px 0px #0049d5;
 }
 .container {
-  width: 500px;
+  width: 900px;
   margin: 50px auto;
   overflow: hidden;
 }
 .main-content {
   float: left;
-  width: 300px;
+  width: 700px;
 }
 .main-content p {
   margin-bottom: 20px;
+}
+.post-title {
+  color: #1b1b1b;
 }
 .sidebar {
   float: left;
   width: 200px;
 }
-.sidebar .widget {
-/*
-     * Note the lack of vendor
-     * prefixes here. Nib will
-     * add them for us
-     */
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  margin-left: 20px;
-  background-color: #faf9f0;
-  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
-  box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
+.sidebar a {
+  color: #3178ff;
 }
-.sidebar .widget h1 {
-  font-family: 'Audimat';
-  margin: 13px 10px 4px;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted #ddd;
-  -webkit-border-radius: 2px 2px 0px 0px;
-  border-radius: 2px 2px 0px 0px;
-  margin-bottom: 10px;
+.sidebar a :hover {
+  color: #3178ff;
 }
-.sidebar .widget p {
-  font-size: 13px;
-  padding: 0px 10px;
-  margin-bottom: 10px;
+.sidebar a :visited {
+  color: #3178ff;
+}
+div.post a {
+  color: #3178ff;
+}
+div.post a :hover {
+  color: #3178ff;
+}
+div.post a :visited {
+  color: #3178ff;
+}
+div.tags .label {
+  color: #3178ff;
+  padding-left: 5px;
+  padding-right: 50px;
 }
 p {
   line-height: 1.8;
 }
 footer {
-  width: 500px;
+  width: 900px;
   margin: 50px auto;
   border-top: 1px dotted #ccc;
   padding-top: 5px;

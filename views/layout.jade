@@ -10,6 +10,9 @@ html
       .main-content
         block content
       .sidebar
-        block sidebar
+        ul
+          - each cat in getCategories()
+            li
+              a(href=categoryURL(cat)) #{cat}
     footer
-      p Running on node with Express, Jade and Stylus
+      .contact

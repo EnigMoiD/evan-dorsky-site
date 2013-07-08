@@ -33,19 +33,31 @@ function compile(str, path) {
 		.set('filename', path)
 		.use(nib());
 }
-// app.use(stylus.middleware(
-// {
-// 	src: __dirname + '/public', 
-// 	compile: compile
-// }
-// )
-// );
+app.use(stylus.middleware(
+{
+	src: __dirname + '/public', 
+	compile: compile
+}
+)
+);
 
 app.use(app.router);
 
 app.get('/', function (req, res) {
 	res.render('index',
 		{ title : 'Home' }
+		)
+});
+
+app.get('/posts', function (req, res) {
+	res.render('posts',
+		{ title : 'Blog' }
+		)
+});
+
+app.get('/portfolio', function (req, res) {
+	res.render('portfolio',
+		{ title : 'Portfolio' }
 		)
 });
 
