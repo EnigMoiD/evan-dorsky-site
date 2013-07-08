@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1
+		a(href=categoryURL(category)) posts in category * #{category}
+	- each post in posts
+		include includes/ObservationsSnippet
+	p
+		This is not the same! It's a #{category}

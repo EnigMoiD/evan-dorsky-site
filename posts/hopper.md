@@ -1,7 +1,7 @@
 {{{
   "title": "Hopper",
-  "tags": ["olin", "engineering"],
-  "category": "Projects",
+  "tags": ["olin", "engineering", "code"],
+  "category": "Portfolio",
   "date": "7-5-2013"
 }}}
 

@@ -16,9 +16,7 @@ var poet = Poet(app, {
 	metaFormat: 'json'
 });
 
-poet.init(function() {
-	// Nothing yet!
-});
+poet.init();
 
 // Setting up directories
 app.set('views', __dirname + '/views');
@@ -42,6 +40,16 @@ app.use(stylus.middleware(
 );
 
 app.use(app.router);
+
+poet.addRoute('/category/:category', function (req, res) {
+  var categorizedPosts = poet.helpers.postsWithCategory(req.params.category);
+  if (categorizedPosts.length) {
+    res.render(""+req.params.category, {
+      posts: categorizedPosts,
+      category: req.params.category
+    });
+  }
+});
 
 app.get('/', function (req, res) {
 	res.render('index',

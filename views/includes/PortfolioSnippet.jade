@@ -1,0 +1,11 @@
+div.post
+  h1
+    a.post-title(href=post.url)
+      = post.title
+  span.date #{post.date.getMonth()+1}.#{post.date.getFullYear()}
+  div.post.content
+    != post.preview
+  div.tags
+    - each tag in post.tags
+      a(href=tagUrl(tag))
+        span.label.label-info #{tag}

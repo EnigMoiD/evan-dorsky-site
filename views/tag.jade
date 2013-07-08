@@ -1,7 +1,11 @@
 extends layout
 
 block content
-  h1
-    a(href=tagURL(tag)) posts tagged *#{tag}
-  - each post in posts
-    include includes/postSnippet
+	h1
+		a(href=tagURL(tag)) posts tagged *#{tag}
+	- each post in posts
+		case post.category
+			when 'Portfolio'
+				include includes/PortfolioSnippet
+			when 'Observations'
+				include includes/ObservationsSnippet
