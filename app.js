@@ -20,6 +20,7 @@ poet.init();
 
 // Setting up directories
 app.set('views', __dirname + '/views');
+app.use('/img', express.static(__dirname + '/img'));
 app.use(express.static(__dirname + '/public'));
 
 // Using jade for backend templates
@@ -31,6 +32,7 @@ function compile(str, path) {
 		.set('filename', path)
 		.use(nib());
 }
+
 app.use(stylus.middleware(
 {
 	src: __dirname + '/public', 
@@ -39,7 +41,7 @@ app.use(stylus.middleware(
 )
 );
 
-app.use(app.router);
+// app.use(app.router);
 
 poet.addRoute('/category/:category', function (req, res) {
   var categorizedPosts = poet.helpers.postsWithCategory(req.params.category);

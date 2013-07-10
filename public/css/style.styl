@@ -29,6 +29,7 @@ global-reset()
 main-color = #3178ff
 background-color = #faf9f0
 text-color = #1b1b1b
+line-height = 1.8em
 
 a
   text-decoration none
@@ -37,6 +38,45 @@ body
   font-family 'Open Sans'
   background-color background-color
   color text-color
+
+img
+  width 100%
+
+snippet-margin = 0.3em
+
+div.postPortSnippet
+  position relative
+  height 300px
+  width 400px
+
+  div.imgContainer
+    height 100%
+    width auto
+    position absolute
+    z-index -1
+    img
+      z-index -2
+      height 100%
+      width auto
+
+  color white
+  h1
+    margin-left snippet-margin
+    color white
+    display inline
+  a
+    color white
+  .date
+    display inline
+  div.postPortSnippetText
+    margin-left snippet-margin
+
+  div.postPortSnippetInfoContainer
+    background linear-gradient(top, rgba(1, 1, 1, 0), rgba(0, 0, 0, 1));
+    position absolute
+    width 100%
+    height line-height*1.8
+    bottom 0px
 
 header
   font-family 'Audimat'
@@ -94,7 +134,7 @@ div.tags
     padding-right 50px
 
 p
-  line-height 1.8
+  line-height line-height
 
 footer
   width 900px
