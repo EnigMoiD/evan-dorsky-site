@@ -115,6 +115,15 @@ a img {
 a {
   text-decoration: none;
 }
+h1.categoryTitle a {
+  color: #3178ff;
+}
+h1.categoryTitle a :hover {
+  color: #3178ff;
+}
+h1.categoryTitle a :visited {
+  color: #3178ff;
+}
 body {
   font-family: 'Open Sans';
   background-color: #faf9f0;
@@ -181,13 +190,13 @@ header {
   text-shadow: 0px -1px 0px #0049d5;
 }
 .container {
-  width: 900px;
+  width: 1200px;
   margin: 50px auto;
   overflow: hidden;
 }
 .main-content {
   float: left;
-  width: 700px;
+  width: 1000px;
 }
 .main-content p {
   margin-bottom: 20px;
@@ -215,6 +224,18 @@ div.post a :hover {
   color: #3178ff;
 }
 div.post a :visited {
+  color: #3178ff;
+}
+.page-number {
+  display: inline;
+}
+.page-number a {
+  color: #3178ff;
+}
+.page-number a :hover {
+  color: #3178ff;
+}
+.page-number a :visited {
   color: #3178ff;
 }
 div.tags .label {

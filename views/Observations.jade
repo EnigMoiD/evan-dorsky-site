@@ -1,8 +1,8 @@
 extends layout
 
 block content
-	h1
-		a(href=categoryURL(category)) posts in category * #{category}
+	h1.categoryTitle
+		a(href=categoryURL(category))  #{category}
 	- each post in posts
 		include includes/ObservationsSnippet
 	p

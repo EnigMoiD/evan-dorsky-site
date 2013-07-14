@@ -14,7 +14,8 @@
 }
 @font-face {
   font-family: 'Audimat';
-  font-weight: bold; src:url('/public/fonts/AUdimat-Regular.otf');
+  font-weight: bold;
+  src:url('/public/fonts/AUdimat-Regular.otf');
 }
 
 /*
@@ -31,8 +32,19 @@ background-color = #faf9f0
 text-color = #1b1b1b
 line-height = 1.8em
 
+a-main-color()
+  a
+    color main-color
+    :hover
+      color main-color
+    :visited
+      color main-color
+
 a
   text-decoration none
+
+h1.categoryTitle
+  a-main-color()
 
 body
   font-family 'Open Sans'
@@ -94,13 +106,13 @@ header
   text-shadow 0px -1px 0px darken(main-color, 30%)
 
 .container
-  width 900px
+  width 1200px
   margin 50px auto
   overflow hidden
 
 .main-content
   float left
-  width 700px
+  width 1000px
 
   p
     margin-bottom 20px
@@ -112,20 +124,14 @@ header
   float left
   width 200px
 
-  a
-    color main-color
-    :hover
-      color main-color
-    :visited
-      color main-color
+  a-main-color()
 
 div.post
-  a
-    color main-color
-    :hover
-      color main-color
-    :visited
-      color main-color
+  a-main-color()
+
+.page-number
+  a-main-color()
+  display inline
 
 div.tags
   .label

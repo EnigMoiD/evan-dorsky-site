@@ -12,7 +12,7 @@ Poet = require('poet');
 
 var poet = Poet(app, {
 	posts: __dirname + '/posts',
-	postsPerPage: 5,
+	postsPerPage: 3,
 	metaFormat: 'json'
 });
 
