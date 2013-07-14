@@ -1,10 +1,10 @@
-div.postPortSnippet
-  div.imgContainer
-    img(src=post.img)
-  div.postPortSnippetInfoContainer
-    h1
-      a.post-title(href=post.url)
-        = post.title
-    p.date  - #{post.date.getMonth()+1}.#{post.date.getFullYear()}
-    div.postPortSnippetText
-      != post.snippet
+a(href=post.url)
+	div.post-port-snippet
+		div.imgContainer
+			img(src=post.img)
+		div.postPortSnippetInfoContainer
+			h1
+				= post.title
+			p.date  - #{post.date.getMonth()+1}.#{post.date.getFullYear()}
+			div.postPortSnippetText
+				!= post.snippet
