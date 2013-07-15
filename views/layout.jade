@@ -7,13 +7,13 @@ html
     a(href='/')
       header
         h1 Evan Dorsky
+        .topbar
+          ul
+            - each cat in getCategories()
+              li
+                a(href=categoryURL(cat)) #{cat}
     .container
       .main-content
         block content
-      .sidebar
-        ul
-          - each cat in getCategories()
-            li
-              a(href=categoryURL(cat)) #{cat}
     footer
       .contact

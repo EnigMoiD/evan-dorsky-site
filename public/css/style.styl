@@ -32,19 +32,21 @@ background-color = #faf9f0
 text-color = #1b1b1b
 line-height = 1.8em
 
-a-main-color()
+a-color(color)
   a
-    color main-color
+    color color
     :hover
-      color main-color
+      color color
     :visited
-      color main-color
+      color color
+    :highlighted
+      color color
 
 a
   text-decoration none
 
 h1.categoryTitle
-  a-main-color()
+  a-color(main-color)
 
 body
   font-family 'Open Sans'
@@ -102,11 +104,13 @@ div.post-port-snippet:hover
 
 
 header
-  font-family 'Audimat'
-  padding 50px 10px
-  color #fff
-  font-size 40px
-  text-align center
+  h1
+    font-family 'Audimat'
+    padding 50px 10px
+    font-size 40px
+    text-align center
+
+  a-color(white)
 
   /*
    * Note the use of the `main-color`
@@ -118,27 +122,28 @@ header
 
 .container
   width 100%
-  margin 50px auto
   overflow hidden
-
-.main-content
-  float left
-  width 90%
 
 .post-title
   color text-color
 
-.sidebar
-  float left
-  width 200px
+.main-content
+  width 100%
 
-  a-main-color()
+.topbar
+  width 100%
+
+  a-color(white)
+
+  ul
+    li
+      display inline
 
 div.post
-  a-main-color()
+  a-color(main-color)
 
 .page-number
-  a-main-color()
+  a-color(main-color)
   display inline
 
 div.tags
