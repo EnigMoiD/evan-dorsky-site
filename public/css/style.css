@@ -128,6 +128,7 @@ h1.categoryTitle a :highlighted {
   color: #3178ff;
 }
 body {
+  min-width: 400px;
   font-family: 'Open Sans';
   background-color: #faf9f0;
   color: #1b1b1b;
