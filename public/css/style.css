@@ -135,6 +135,18 @@ body {
 img {
   width: 100%;
 }
+div.post a {
+  color: #3178ff;
+}
+div.post a :hover {
+  color: #3178ff;
+}
+div.post a :visited {
+  color: #3178ff;
+}
+div.post a :highlighted {
+  color: #3178ff;
+}
 div.post-port-snippet {
   display: static;
   float: left;
@@ -247,18 +259,6 @@ header a :highlighted {
 }
 .topbar ul li {
   display: inline-block;
-}
-div.post a {
-  color: #3178ff;
-}
-div.post a :hover {
-  color: #3178ff;
-}
-div.post a :visited {
-  color: #3178ff;
-}
-div.post a :highlighted {
-  color: #3178ff;
 }
 .page-number {
   display: inline;
