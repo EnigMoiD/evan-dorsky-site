@@ -147,37 +147,37 @@ div.post a :visited {
 div.post a :highlighted {
   color: #3178ff;
 }
-div.post-port-snippet {
-  display: static;
+div.post-port-snippet,
+.front-post-port-snippet {
   float: left;
   position: relative;
-  height: 300px;
   width: 400px;
   color: #fff;
 }
-div.post-port-snippet div.imgContainer {
-  height: 100%;
-  width: auto;
-  position: absolute;
+div.post-port-snippet div.imgContainer,
+.front-post-port-snippet div.imgContainer {
   z-index: -1;
 }
-div.post-port-snippet div.imgContainer img {
+div.post-port-snippet div.imgContainer img,
+.front-post-port-snippet div.imgContainer img {
   z-index: -2;
-  height: 100%;
-  width: auto;
 }
-div.post-port-snippet h1 {
+div.post-port-snippet h1,
+.front-post-port-snippet h1 {
   margin-left: 0.3em;
   color: #fff;
   display: inline;
 }
-div.post-port-snippet a {
+div.post-port-snippet a,
+.front-post-port-snippet a {
   color: #fff;
 }
-div.post-port-snippet .date {
+div.post-port-snippet .date,
+.front-post-port-snippet .date {
   display: inline;
 }
-div.post-port-snippet div.postPortSnippetInfoContainer {
+div.post-port-snippet div.postPortSnippetInfoContainer,
+.front-post-port-snippet div.postPortSnippetInfoContainer {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,0,0)), color-stop(1, #000));
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0, #000 100%);
   background: -moz-linear-gradient(top, rgba(0,0,0,0) 0, #000 100%);
@@ -189,10 +189,12 @@ div.post-port-snippet div.postPortSnippetInfoContainer {
   width: 100%;
   bottom: 0px;
 }
-div.post-port-snippet div.postPortSnippetText {
+div.post-port-snippet div.postPortSnippetText,
+.front-post-port-snippet div.postPortSnippetText {
   margin-left: 0.3em;
 }
-div.post-port-snippet:hover div.postPortSnippetInfoContainer {
+div.post-port-snippet:hover div.postPortSnippetInfoContainer,
+.front-post-port-snippet:hover div.postPortSnippetInfoContainer {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0)), color-stop(1, #fff));
   background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
@@ -201,8 +203,18 @@ div.post-port-snippet:hover div.postPortSnippetInfoContainer {
   background: linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
   color: #1b1b1b;
 }
-div.post-port-snippet:hover h1 {
+div.post-port-snippet:hover h1,
+.front-post-port-snippet:hover h1 {
   color: #1b1b1b;
+}
+div.column {
+  width: 50%;
+  display: inline;
+  float: left;
+  overflow: hidden;
+}
+.front-post-port-snippet {
+  width: 100% !important;
 }
 header {
 /*

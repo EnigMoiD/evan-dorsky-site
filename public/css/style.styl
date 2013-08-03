@@ -61,22 +61,15 @@ snippet-margin = 0.3em
 div.post
   a-color(main-color)
 
-div.post-port-snippet
-  display static
+div.post-port-snippet, .front-post-port-snippet
   float left
   position relative
-  height 300px
   width 400px
 
   div.imgContainer
-    height 100%
-    width auto
-    position absolute
     z-index -1
     img
       z-index -2
-      height 100%
-      width auto
 
   color white
   h1
@@ -98,13 +91,21 @@ div.post-port-snippet
   div.postPortSnippetText
     margin-left snippet-margin
 
-div.post-port-snippet:hover
+div.post-port-snippet:hover, .front-post-port-snippet:hover
   div.postPortSnippetInfoContainer
     background linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
     color text-color
   h1
     color text-color
 
+div.column
+  width 50%
+  display inline
+  float left
+  overflow hidden
+
+.front-post-port-snippet
+  width 100% !important
 
 header
   h1
