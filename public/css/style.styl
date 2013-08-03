@@ -1,39 +1,23 @@
-/*
- * Import nib
- */
 @import 'nib'
 
-/*
- * Grab a custom font from Google
- */
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300')
 
-@font-face {
-  font-family: 'Audimat';
-  src: url('/fonts/AUdimat-Regular.otf');
-}
-@font-face {
-  font-family: 'Audimat';
-  font-weight: bold;
-  src:url('/fonts/AUdimat-Regular.otf');
-}
+@font-face
+  font-family 'Audimat'
+  src url('/fonts/AUdimat-Regular.otf')
 
-/*
- * Nib provides a CSS reset
- */
+@font-face
+  font-family 'Audimat'
+  font-weight bold
+  src url('/fonts/AUdimat-Bold.otf')
+
 global-reset()
 
-/*
- * Store the main color and
- * background color as variables
- */
-main-color = #3178ff
-background-color = #faf9f0
-text-color = #1b1b1b
-line-height = 1.8em
+//Mixins
 
 a-color(color)
   a
+    text-decoration none
     color color
     :hover
       color color
@@ -42,73 +26,31 @@ a-color(color)
     :highlighted
       color color
 
-a
-  text-decoration none
+//Colors
+main-color = #3178ff
+background-color = #faf9f0
+text-color = #1b1b1b
 
-h1.categoryTitle
-  a-color(main-color)
+//Layout variables
+line-height = 1.8em
+snippet-margin = 0.3em
+
+//Global config
 
 body
   font-family 'Open Sans'
   background-color background-color
   color text-color
 
-img
-  width 100%
+p
+  line-height line-height
 
-snippet-margin = 0.3em
-
-div.post
-  a-color(main-color)
-
-div.post-port-snippet, .front-post-port-snippet
-  float left
-  position relative
-  width 400px
-
-  div.imgContainer
-    z-index -1
-    img
-      z-index -2
-
-  color white
-  h1
-    margin-left snippet-margin
-    color white
-    display inline
-  a
-    color white
-  .date
-    display inline
-
-  div.postPortSnippetInfoContainer
-    background linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))
-    position absolute
-    height line-height*1.8
-    width 100%
-    bottom 0px
-
-  div.postPortSnippetText
-    margin-left snippet-margin
-
-div.post-port-snippet:hover, .front-post-port-snippet:hover
-  div.postPortSnippetInfoContainer
-    background linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1))
-    color text-color
-  h1
-    color text-color
-
-div.column
-  width 50%
-  min-width 400px
-  display inline
-  float left
-  overflow hidden
-
-.front-post-port-snippet
-  width 100% !important
+//Global Layout
 
 header
+  background-color main-color
+  border-bottom 1px solid darken(main-color, 30%)
+  text-shadow 0px -1px 0px darken(main-color, 30%)
   h1
     font-family 'Audimat'
     padding 50px 10px
@@ -117,51 +59,82 @@ header
 
   a-color(white)
 
-  /*
-   * Note the use of the `main-color`
-   * variable and the `darken` function
-   */
-  background-color main-color
-  border-bottom 1px solid darken(main-color, 30%)
-  text-shadow 0px -1px 0px darken(main-color, 30%)
+  .topbar
+    width 100%
+    ul
+      li
+        text-align center
+        display inline-block
 
-.container
+div.container
   width 100%
   overflow hidden
 
-.post-title
-  color text-color
-
-.main-content
-  width 100%
-
-.topbar
-  width 100%
-
-  text-align center
-
-  a-color(white)
-
-  ul
-    li
-      display inline-block
-
-.page-number
-  a-color(main-color)
-  display inline
-
-div.tags
-  .label
-    color main-color
-    padding-left 5px
-    padding-right 50px
-
-p
-  line-height line-height
-
 footer
   width 900px
-  margin 50px auto
   border-top 1px dotted #ccc
-  padding-top 5px
-  font-size 13px
+
+//----
+
+//Page-Specific Layout
+
+//Index Layout
+div.column
+  width 50%
+  min-width 400px
+  display inline
+  float left
+  overflow hidden
+
+//Category Layout
+h1.categoryTitle
+  a-color(main-color)
+
+//Includes
+
+div.post
+  a-color(main-color)
+  .post-title
+    text-align center
+  div.tags
+    .label
+      color main-color
+      padding-left 5px
+      padding-right 50px
+
+div.post-port-snippet, .front-post-port-snippet
+  float left
+  position relative
+  width 400px
+  color white
+
+  div.imgContainer
+    z-index -1
+    img
+      width 100%
+
+  div.postPortSnippetInfoContainer
+    background linear-gradient(top, rgba(black, 0), rgba(black, 1))
+    position absolute
+    height line-height*1.8
+    width 100%
+    bottom 0px
+    h1
+      margin-left snippet-margin
+      color inherit
+      display inline
+    .date
+      display inline
+    div.postPortSnippetText
+      margin-left snippet-margin
+
+  &:hover
+    color text-color
+    div.postPortSnippetInfoContainer
+      background linear-gradient(top, rgba(white, 0), rgba(white, 1))
+.front-post-port-snippet
+  width 100% !important
+
+div.page-number
+  a-color(main-color)
+  display inline

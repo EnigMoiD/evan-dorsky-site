@@ -1,9 +1,3 @@
-/*
- * Import nib
- */
-/*
- * Grab a custom font from Google
- */
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
 @font-face {
   font-family: 'Audimat';
@@ -12,11 +6,8 @@
 @font-face {
   font-family: 'Audimat';
   font-weight: bold;
-  src: url("/fonts/AUdimat-Regular.otf");
+  src: url("/fonts/AUdimat-Bold.otf");
 }
-/*
- * Nib provides a CSS reset
- */
 html,
 body,
 div,
@@ -108,14 +99,62 @@ td {
 a img {
   border: none;
 }
-/*
- * Store the main color and
- * background color as variables
- */
-a {
+body {
+  font-family: 'Open Sans';
+  background-color: #faf9f0;
+  color: #1b1b1b;
+}
+p {
+  line-height: 1.8em;
+}
+header {
+  background-color: #3178ff;
+  border-bottom: 1px solid #0049d5;
+  text-shadow: 0px -1px 0px #0049d5;
+}
+header h1 {
+  font-family: 'Audimat';
+  padding: 50px 10px;
+  font-size: 40px;
+  text-align: center;
+}
+header a {
   text-decoration: none;
+  color: #fff;
+}
+header a :hover {
+  color: #fff;
+}
+header a :visited {
+  color: #fff;
+}
+header a :highlighted {
+  color: #fff;
+}
+header .topbar {
+  width: 100%;
+}
+header .topbar ul li {
+  text-align: center;
+  display: inline-block;
+}
+div.container {
+  width: 100%;
+  overflow: hidden;
+}
+footer {
+  width: 900px;
+  border-top: 1px dotted #ccc;
+}
+div.column {
+  width: 50%;
+  min-width: 400px;
+  display: inline;
+  float: left;
+  overflow: hidden;
 }
 h1.categoryTitle a {
+  text-decoration: none;
   color: #3178ff;
 }
 h1.categoryTitle a :hover {
@@ -127,15 +166,8 @@ h1.categoryTitle a :visited {
 h1.categoryTitle a :highlighted {
   color: #3178ff;
 }
-body {
-  font-family: 'Open Sans';
-  background-color: #faf9f0;
-  color: #1b1b1b;
-}
-img {
-  width: 100%;
-}
 div.post a {
+  text-decoration: none;
   color: #3178ff;
 }
 div.post a :hover {
@@ -146,6 +178,14 @@ div.post a :visited {
 }
 div.post a :highlighted {
   color: #3178ff;
+}
+div.post .post-title {
+  text-align: center;
+}
+div.post div.tags .label {
+  color: #3178ff;
+  padding-left: 5px;
+  padding-right: 50px;
 }
 div.post-port-snippet,
 .front-post-port-snippet {
@@ -160,21 +200,7 @@ div.post-port-snippet div.imgContainer,
 }
 div.post-port-snippet div.imgContainer img,
 .front-post-port-snippet div.imgContainer img {
-  z-index: -2;
-}
-div.post-port-snippet h1,
-.front-post-port-snippet h1 {
-  margin-left: 0.3em;
-  color: #fff;
-  display: inline;
-}
-div.post-port-snippet a,
-.front-post-port-snippet a {
-  color: #fff;
-}
-div.post-port-snippet .date,
-.front-post-port-snippet .date {
-  display: inline;
+  width: 100%;
 }
 div.post-port-snippet div.postPortSnippetInfoContainer,
 .front-post-port-snippet div.postPortSnippetInfoContainer {
@@ -189,9 +215,23 @@ div.post-port-snippet div.postPortSnippetInfoContainer,
   width: 100%;
   bottom: 0px;
 }
-div.post-port-snippet div.postPortSnippetText,
-.front-post-port-snippet div.postPortSnippetText {
+div.post-port-snippet div.postPortSnippetInfoContainer h1,
+.front-post-port-snippet div.postPortSnippetInfoContainer h1 {
   margin-left: 0.3em;
+  color: inherit;
+  display: inline;
+}
+div.post-port-snippet div.postPortSnippetInfoContainer .date,
+.front-post-port-snippet div.postPortSnippetInfoContainer .date {
+  display: inline;
+}
+div.post-port-snippet div.postPortSnippetInfoContainer div.postPortSnippetText,
+.front-post-port-snippet div.postPortSnippetInfoContainer div.postPortSnippetText {
+  margin-left: 0.3em;
+}
+div.post-port-snippet:hover,
+.front-post-port-snippet:hover {
+  color: #1b1b1b;
 }
 div.post-port-snippet:hover div.postPortSnippetInfoContainer,
 .front-post-port-snippet:hover div.postPortSnippetInfoContainer {
@@ -201,105 +241,23 @@ div.post-port-snippet:hover div.postPortSnippetInfoContainer,
   background: -o-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
   background: -ms-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
   background: linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
-  color: #1b1b1b;
-}
-div.post-port-snippet:hover h1,
-.front-post-port-snippet:hover h1 {
-  color: #1b1b1b;
-}
-div.column {
-  width: 50%;
-  min-width: 400px;
-  display: inline;
-  float: left;
-  overflow: hidden;
 }
 .front-post-port-snippet {
   width: 100% !important;
 }
-header {
-/*
-   * Note the use of the `main-color`
-   * variable and the `darken` function
-   */
-  background-color: #3178ff;
-  border-bottom: 1px solid #0049d5;
-  text-shadow: 0px -1px 0px #0049d5;
-}
-header h1 {
-  font-family: 'Audimat';
-  padding: 50px 10px;
-  font-size: 40px;
-  text-align: center;
-}
-header a {
-  color: #fff;
-}
-header a :hover {
-  color: #fff;
-}
-header a :visited {
-  color: #fff;
-}
-header a :highlighted {
-  color: #fff;
-}
-.container {
-  width: 100%;
-  overflow: hidden;
-}
-.post-title {
-  color: #1b1b1b;
-}
-.main-content {
-  width: 100%;
-}
-.topbar {
-  width: 100%;
-  text-align: center;
-}
-.topbar a {
-  color: #fff;
-}
-.topbar a :hover {
-  color: #fff;
-}
-.topbar a :visited {
-  color: #fff;
-}
-.topbar a :highlighted {
-  color: #fff;
-}
-.topbar ul li {
-  display: inline-block;
-}
-.page-number {
+div.page-number {
   display: inline;
 }
-.page-number a {
+div.page-number a {
+  text-decoration: none;
   color: #3178ff;
 }
-.page-number a :hover {
+div.page-number a :hover {
   color: #3178ff;
 }
-.page-number a :visited {
+div.page-number a :visited {
   color: #3178ff;
 }
-.page-number a :highlighted {
+div.page-number a :highlighted {
   color: #3178ff;
-}
-div.tags .label {
-  color: #3178ff;
-  padding-left: 5px;
-  padding-right: 50px;
-}
-p {
-  line-height: 1.8em;
-}
-footer {
-  width: 900px;
-  margin: 50px auto;
-  border-top: 1px dotted #ccc;
-  padding-top: 5px;
-  font-size: 13px;
 }
