@@ -8,9 +8,7 @@ stylus = require('stylus'),
 // And nib like bourbon
 nib = require('nib'),
 // Poet for blog
-Poet = require('poet'),
-// watch for watching?
-watch = require('watch');
+Poet = require('poet');
 
 var poet = Poet(app, {
 	posts: __dirname + '/posts',
@@ -20,10 +18,19 @@ var poet = Poet(app, {
 
 poet.init();
 
-// Setting up directories
 app.set('views', __dirname + '/views');
-app.use('/img', express.static(__dirname + '/img'));
-app.use(express.static(__dirname + '/public'));
+
+app.configure(function() {
+	app.use(stylus.middleware({
+			src: __dirname + '/views', 
+			dest: __dirname + '/public', 
+			compile: compile,
+			force: true
+		})
+	);	
+	app.use(express.static(__dirname + '/public'));
+})
+
 
 // Using jade for backend templates
 app.set('view engine', 'jade');
@@ -34,12 +41,6 @@ function compile(str, path) {
 		.set('filename', path)
 		.use(nib());
 }
-
-app.use(stylus.middleware({
-		src: __dirname + '/public', 
-		compile: compile
-	})
-);
 
 poet.addRoute('/category/:category', function (req, res) {
   var categorizedPosts = poet.helpers.postsWithCategory(req.params.category);
