@@ -7,5 +7,6 @@ div.post
     != post.preview
   div.tags
     - each tag in post.tags
-      a(href=tagUrl(tag))
-        span.label.label-info #{tag}
+      div.tag-container
+        a(href=tagUrl(tag))
+          span.tag #{tag}

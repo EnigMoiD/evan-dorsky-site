@@ -65,10 +65,4 @@ app.get('/posts', function (req, res) {
 		)
 });
 
-app.get('/portfolio', function (req, res) {
-	res.render('portfolio',
-		{ title : 'Portfolio' }
-		)
-});
-
 app.listen(3000);

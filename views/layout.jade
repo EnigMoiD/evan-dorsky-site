@@ -10,12 +10,12 @@ html
         .topbar
           ul
             - each cat in getCategories()
-              li
+              li(class=(cat == category)? 'active' : '')
                 a(href=categoryURL(cat)) #{cat}
     .container
       block content
     footer
       .contact
 
-  script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+  script(src='/js/zepto.min.js')
   script(src='/js/layout.js')

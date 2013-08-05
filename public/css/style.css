@@ -101,7 +101,7 @@ a img {
 }
 body {
   font-family: 'Open Sans';
-  background-color: #faf9f0;
+  background-color: #f0f9fa;
   color: #1b1b1b;
 }
 p {
@@ -138,9 +138,13 @@ header .topbar ul li {
   text-align: center;
   display: inline-block;
 }
+header .topbar ul .active {
+  font-size: 30px;
+}
 div.container {
   width: 100%;
   overflow: hidden;
+  background-color: #f0f9fa;
 }
 footer {
   width: 900px;
@@ -153,18 +157,10 @@ div.column {
   float: left;
   overflow: hidden;
 }
-h1.categoryTitle a {
-  text-decoration: none;
-  color: #3178ff;
-}
-h1.categoryTitle a :hover {
-  color: #3178ff;
-}
-h1.categoryTitle a :visited {
-  color: #3178ff;
-}
-h1.categoryTitle a :highlighted {
-  color: #3178ff;
+div.post {
+  margin: 0.3em;
+  padding: 0.3em;
+  background-color: #fff;
 }
 div.post a {
   text-decoration: none;
@@ -182,10 +178,24 @@ div.post a :highlighted {
 div.post .post-title {
   text-align: center;
 }
-div.post div.tags .label {
+div.post div.tags .tag-container {
+  display: inline-block;
+  height: 1.8em;
+}
+div.post div.tags .tag-container .tag {
+  -webkit-transition: background-color 100ms, color 100ms;
+  -moz-transition: background-color 100ms, color 100ms;
+  -o-transition: background-color 100ms, color 100ms;
+  -ms-transition: background-color 100ms, color 100ms;
+  transition: background-color 100ms, color 100ms;
+  padding: 0.3em;
+  margin: 0.19999999999999998em;
+  background-color: #3178ff;
+  color: #fff;
+}
+div.post div.tags .tag-container .tag:hover {
+  background-color: #fff;
   color: #3178ff;
-  padding-left: 5px;
-  padding-right: 50px;
 }
 div.post-port-snippet,
 .front-post-port-snippet {
@@ -213,7 +223,7 @@ div.post-port-snippet div.postPortSnippetInfoContainer,
   position: absolute;
   height: 3.24em;
   width: 100%;
-  bottom: 0px;
+  bottom: 0;
 }
 div.post-port-snippet div.postPortSnippetInfoContainer h1,
 .front-post-port-snippet div.postPortSnippetInfoContainer h1 {
@@ -229,35 +239,22 @@ div.post-port-snippet div.postPortSnippetInfoContainer div.postPortSnippetText,
 .front-post-port-snippet div.postPortSnippetInfoContainer div.postPortSnippetText {
   margin-left: 0.3em;
 }
-div.post-port-snippet:hover,
-.front-post-port-snippet:hover {
-  color: #1b1b1b;
-}
-div.post-port-snippet:hover div.postPortSnippetInfoContainer,
-.front-post-port-snippet:hover div.postPortSnippetInfoContainer {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(255,255,255,0)), color-stop(1, #fff));
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
-  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
-  background: -o-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
-  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
-  background: linear-gradient(top, rgba(255,255,255,0) 0, #fff 100%);
-}
 .front-post-port-snippet {
   width: 100% !important;
 }
-div.page-number {
+.page-number {
   display: inline;
 }
-div.page-number a {
+.page-number a {
   text-decoration: none;
   color: #3178ff;
 }
-div.page-number a :hover {
+.page-number a :hover {
   color: #3178ff;
 }
-div.page-number a :visited {
+.page-number a :visited {
   color: #3178ff;
 }
-div.page-number a :highlighted {
+.page-number a :highlighted {
   color: #3178ff;
 }

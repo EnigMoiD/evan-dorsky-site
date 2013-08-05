@@ -26,20 +26,26 @@ a-color(color)
     :highlighted
       color color
 
+//Animation
+fast = 100ms
+
 //Colors
 main-color = #3178ff
-background-color = #faf9f0
+bg-color = #f0f9fa
 text-color = #1b1b1b
 
 //Layout variables
 line-height = 1.8em
+
+//Include variables
 snippet-margin = 0.3em
+post-background = white
 
 //Global config
 
 body
   font-family 'Open Sans'
-  background-color background-color
+  background-color bg-color
   color text-color
 
 p
@@ -65,10 +71,13 @@ header
       li
         text-align center
         display inline-block
+      .active
+        font-size 30px
 
 div.container
   width 100%
   overflow hidden
+  background-color bg-color
 
 footer
   width 900px
@@ -86,21 +95,32 @@ div.column
   float left
   overflow hidden
 
-//Category Layout
-h1.categoryTitle
-  a-color(main-color)
-
 //Includes
 
 div.post
+  margin snippet-margin
+  padding snippet-margin
+  background-color post-background
+
   a-color(main-color)
   .post-title
     text-align center
   div.tags
-    .label
-      color main-color
-      padding-left 5px
-      padding-right 50px
+    .tag-container
+      display inline-block
+      height line-height
+
+      .tag
+        transition background-color fast, color fast
+
+        padding snippet-margin
+        margin snippet-margin - .1em
+        background-color main-color
+        color white  
+
+        &:hover
+          background-color white
+          color main-color
 
 div.post-port-snippet, .front-post-port-snippet
   float left
@@ -115,10 +135,11 @@ div.post-port-snippet, .front-post-port-snippet
 
   div.postPortSnippetInfoContainer
     background linear-gradient(top, rgba(black, 0), rgba(black, 1))
+
     position absolute
-    height line-height*1.8
+    height line-height*line-height
     width 100%
-    bottom 0px
+    bottom 0
     h1
       margin-left snippet-margin
       color inherit
@@ -127,14 +148,9 @@ div.post-port-snippet, .front-post-port-snippet
       display inline
     div.postPortSnippetText
       margin-left snippet-margin
-
-  &:hover
-    color text-color
-    div.postPortSnippetInfoContainer
-      background linear-gradient(top, rgba(white, 0), rgba(white, 1))
 .front-post-port-snippet
   width 100% !important
 
-div.page-number
+.page-number
   a-color(main-color)
   display inline

@@ -1,7 +1,5 @@
 extends layout
 
 block content
-	h1.categoryTitle
-		a(href=categoryURL(category)) #{category}
 	- each post in posts
 		include includes/PortfolioSnippet
