@@ -1,0 +1,4 @@
+div.tags
+  - each tag in listTags
+    a(href=tagUrl(tag))
+      span.tag(class=(highlightTag==tag)? 'highlight-tag' : '') #{tag}

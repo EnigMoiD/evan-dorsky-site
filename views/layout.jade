@@ -12,6 +12,8 @@ html
             - each cat in getCategories()
               li(class=(cat == category)? 'active' : '')
                 a(href=categoryURL(cat)) #{cat}
+      - var listTags = getTags()
+      include includes/TagList                
     .container
       block content
     footer

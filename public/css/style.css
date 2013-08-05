@@ -99,6 +99,9 @@ td {
 a img {
   border: none;
 }
+a {
+  text-decoration: none;
+}
 body {
   font-family: 'Open Sans';
   background-color: #f0f9fa;
@@ -157,6 +160,39 @@ div.column {
   float: left;
   overflow: hidden;
 }
+div.tags {
+  margin: 0.3em;
+  margin-left: 0;
+}
+div.tags .tag {
+  padding: 0.3em;
+  margin-right: 1px;
+  display: inline;
+  background-color: #3178ff;
+  color: #fff;
+  -webkit-transition: background-color 100ms, color 100ms;
+  -moz-transition: background-color 100ms, color 100ms;
+  -o-transition: background-color 100ms, color 100ms;
+  -ms-transition: background-color 100ms, color 100ms;
+  transition: background-color 100ms, color 100ms;
+}
+div.tags .tag:hover {
+  background-color: rgba(255,255,255,0);
+  color: #3178ff;
+}
+div.tags .highlight-tag {
+  background-color: rgba(255,255,255,0);
+  color: #3178ff;
+  -webkit-transition: background-color 100ms, color 100ms;
+  -moz-transition: background-color 100ms, color 100ms;
+  -o-transition: background-color 100ms, color 100ms;
+  -ms-transition: background-color 100ms, color 100ms;
+  transition: background-color 100ms, color 100ms;
+}
+div.tags .highlight-tag:hover {
+  background-color: #3178ff;
+  color: #fff;
+}
 div.post {
   margin: 0.3em;
   padding: 0.3em;
@@ -177,25 +213,6 @@ div.post a :highlighted {
 }
 div.post .post-title {
   text-align: center;
-}
-div.post div.tags .tag-container {
-  display: inline-block;
-  height: 1.8em;
-}
-div.post div.tags .tag-container .tag {
-  -webkit-transition: background-color 100ms, color 100ms;
-  -moz-transition: background-color 100ms, color 100ms;
-  -o-transition: background-color 100ms, color 100ms;
-  -ms-transition: background-color 100ms, color 100ms;
-  transition: background-color 100ms, color 100ms;
-  padding: 0.3em;
-  margin: 0.19999999999999998em;
-  background-color: #3178ff;
-  color: #fff;
-}
-div.post div.tags .tag-container .tag:hover {
-  background-color: #fff;
-  color: #3178ff;
 }
 div.post-port-snippet,
 .front-post-port-snippet {

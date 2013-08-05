@@ -26,6 +26,10 @@ a-color(color)
     :highlighted
       color color
 
+margin-not(margin, except)
+  margin margin
+  margin-{except} 0
+
 //Animation
 fast = 100ms
 
@@ -42,6 +46,9 @@ snippet-margin = 0.3em
 post-background = white
 
 //Global config
+
+a
+  text-decoration none
 
 body
   font-family 'Open Sans'
@@ -97,6 +104,29 @@ div.column
 
 //Includes
 
+div.tags
+  margin-not(snippet-margin, 'left')
+  .tag
+    padding snippet-margin
+    margin-right 1px
+    display inline
+    background-color main-color
+    color white  
+
+    transition background-color fast, color fast
+    &:hover
+      background-color rgba(white, 0)
+      color main-color
+  .highlight-tag
+    background-color rgba(white, 0)
+    color main-color
+
+    transition background-color fast, color fast
+    &:hover
+      background-color main-color
+      color white
+
+
 div.post
   margin snippet-margin
   padding snippet-margin
@@ -105,22 +135,6 @@ div.post
   a-color(main-color)
   .post-title
     text-align center
-  div.tags
-    .tag-container
-      display inline-block
-      height line-height
-
-      .tag
-        transition background-color fast, color fast
-
-        padding snippet-margin
-        margin snippet-margin - .1em
-        background-color main-color
-        color white  
-
-        &:hover
-          background-color white
-          color main-color
 
 div.post-port-snippet, .front-post-port-snippet
   float left

@@ -8,7 +8,9 @@ stylus = require('stylus'),
 // And nib like bourbon
 nib = require('nib'),
 // Poet for blog
-Poet = require('poet');
+Poet = require('poet'),
+// watch for watching?
+watch = require('watch');
 
 var poet = Poet(app, {
 	posts: __dirname + '/posts',
@@ -33,15 +35,11 @@ function compile(str, path) {
 		.use(nib());
 }
 
-app.use(stylus.middleware(
-{
-	src: __dirname + '/public', 
-	compile: compile
-}
-)
+app.use(stylus.middleware({
+		src: __dirname + '/public', 
+		compile: compile
+	})
 );
-
-// app.use(app.router);
 
 poet.addRoute('/category/:category', function (req, res) {
   var categorizedPosts = poet.helpers.postsWithCategory(req.params.category);
@@ -53,16 +51,26 @@ poet.addRoute('/category/:category', function (req, res) {
   }
 });
 
+poet.addRoute('/tag/:tag', function (req, res) {
+  var taggedPosts = poet.helpers.postsWithTag(req.params.tag);
+  if (taggedPosts.length) {
+    res.render('tag', {
+      posts: taggedPosts,
+      highlightTag: req.params.tag
+    });
+  }
+});
+
 app.get('/', function (req, res) {
-	res.render('index',
-		{ title : 'Home' }
-		)
+	res.render('index', {
+		title : 'Home'
+	})
 });
 
 app.get('/posts', function (req, res) {
-	res.render('posts',
-		{ title : 'Blog' }
-		)
+	res.render('posts', {
+		title : 'Blog'
+	})
 });
 
 app.listen(3000);

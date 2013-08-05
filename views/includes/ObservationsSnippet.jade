@@ -5,8 +5,5 @@ div.post
   span.date #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
   div.post-content
     != post.preview
-  div.tags
-    - each tag in post.tags
-      div.tag-container
-        a(href=tagUrl(tag))
-          span.tag #{tag}
+  - var listTags = post.tags
+  include TagList
