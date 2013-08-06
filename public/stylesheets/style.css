@@ -198,6 +198,9 @@ div.post {
   padding: 0.3em;
   background-color: #fff;
 }
+div.post h1 {
+  border-bottom: 1px solid #3178ff;
+}
 div.post a {
   text-decoration: none;
   color: #3178ff;

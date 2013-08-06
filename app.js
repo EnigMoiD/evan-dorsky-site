@@ -75,3 +75,5 @@ app.get('/posts', function (req, res) {
 });
 
 app.listen(3000);
+
+console.log('> running on port 3000');
