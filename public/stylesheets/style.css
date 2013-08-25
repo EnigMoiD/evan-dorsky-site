@@ -108,7 +108,7 @@ body {
   color: #1b1b1b;
 }
 p {
-  line-height: 1.8em;
+  line-height: 1.6em;
 }
 header {
   background-color: #3178ff;
@@ -198,8 +198,12 @@ div.post {
   padding: 0.3em;
   background-color: #fff;
 }
-div.post h1 {
+div.post .header {
   border-bottom: 1px solid #3178ff;
+  font-size: 1.5em;
+}
+div.post .date {
+  color: #8d8d8d;
 }
 div.post a {
   text-decoration: none;
@@ -241,7 +245,7 @@ div.post-port-snippet div.postPortSnippetInfoContainer,
   background: -ms-linear-gradient(top, rgba(0,0,0,0) 0, #000 100%);
   background: linear-gradient(top, rgba(0,0,0,0) 0, #000 100%);
   position: absolute;
-  height: 3.24em;
+  height: 2.8800000000000003em;
   width: 100%;
   bottom: 0;
 }

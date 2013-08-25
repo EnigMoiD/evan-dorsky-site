@@ -39,7 +39,7 @@ bg-color = #f0f9fa
 text-color = #1b1b1b
 
 //Layout variables
-line-height = 1.8em
+line-height = 1.6em
 
 //Include variables
 snippet-margin = 0.3em
@@ -128,11 +128,15 @@ div.tags
 
 
 div.post
-  h1
+  .header
     border-bottom 1px solid main-color
+    font-size 1.5em
   margin snippet-margin
   padding snippet-margin
   background-color post-background
+
+  .date
+    color lighten(text-color, 50%)
 
   a-color(main-color)
   .post-title
@@ -153,7 +157,7 @@ div.post-port-snippet, .front-post-port-snippet
     background linear-gradient(top, rgba(black, 0), rgba(black, 1))
 
     position absolute
-    height line-height*line-height
+    height line-height*1.8
     width 100%
     bottom 0
     h1
