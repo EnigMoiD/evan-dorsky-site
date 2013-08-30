@@ -1,10 +1,10 @@
 $(document).ready(function() {
-	setupTopBar();
-});
+	setupTopBar()
+})
 
 function setupTopBar() {
-	var topBarItems = $('.topbar ul li');
-	var itemWidth = 100 / topBarItems.length;
+	var topBarItems = $('.topbar ul li')
+	var itemWidth = 100 / topBarItems.length
 
-	topBarItems.width(itemWidth+'%');
+	topBarItems.width(itemWidth+'%')
 }
