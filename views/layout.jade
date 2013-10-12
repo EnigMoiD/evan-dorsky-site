@@ -1,24 +1,37 @@
 !!!5
 html
-  head
-    title #{title} - Evan Dorsky
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    script(src='/js/config.js')
-  body
-    a(href='/')
-      header
-        h1 Evan Dorsky
-        .topbar
-          ul
-            - each cat in getCategories()
-              li(class=(cat == category)? 'active' : '')
-                a(href=categoryURL(cat)) #{cat}
-      - var listTags = getTags()
-      include includes/TagList                
-    .container
-      block content
-    footer
-      .contact
+	head
+		title #{title} - Evan Dorsky
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		- weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-  script(src='/js/zepto.min.js')
-  script(src='/js/layout.js')
+		- Date.prototype.weekDay = function() {
+		- 	return weekDays[this.getDay()];
+		- }
+
+		- Date.prototype.blogFormat = function() {
+		- 	if (new Date().getTime() - this.getTime() < 86400000) {
+		- 		return this.weekDay();
+		- 	}
+		- 	else {
+		- 		return this.getMonth()+1+'/'+this.getDate()+'/'+this.getFullYear();
+		- 	}
+		- }
+	body
+		a(href='/')
+			header
+				h1 Evan Dorsky
+				.topbar
+					ul
+						- each cat in getCategories()
+							li(class=(cat == category)? 'active' : '')
+								a(href=categoryURL(cat)) #{cat}
+			- var listTags = getTags()
+			include includes/TagList
+		.container
+			block content
+		footer
+			.contact
+
+	script(src='/js/zepto.min.js')
+	script(src='/js/layout.js')
